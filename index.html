@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sakred Studio — Independent app studio in Toronto</title>
+<meta name="description" content="Sakred Studio is an independent software studio based in Toronto, Canada, designing and building calm, useful mobile apps across wellness, productivity, and everyday life. Operating brand of 17899181 Canada Inc." />
+<meta name="author" content="Sakred Studio — 17899181 Canada Inc." />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Sakred Studio" />
+<meta property="og:description" content="An independent app studio in Toronto, Canada, building calm, useful mobile software." />
+<meta property="og:site_name" content="Sakred Studio" />
+<meta property="og:image" content="assets/og-hero.png" />
+
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
+<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:#16110d;
+    --bg-raise:#1e1813;
+    --bg-card:#221b15;
+    --cream:#f4ece0;
+    --cream-dim:#cdbfae;
+    --muted:#9a8a76;
+    --ember:#ef7b45;
+    --ember-soft:#f29a6a;
+    --gold:#e0ad6b;
+    --line:rgba(244,236,224,0.10);
+    --line-strong:rgba(244,236,224,0.18);
+    --maxw:1080px;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--cream);
+    font-family:'Hanken Grotesk',-apple-system,sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+
+  /* grain + ambient ember glow */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:0;pointer-events:none;
+    background:
+      radial-gradient(900px 600px at 78% -8%, rgba(239,123,69,0.18), transparent 60%),
+      radial-gradient(700px 500px at 8% 4%, rgba(224,173,107,0.08), transparent 55%);
+  }
+  body::after{
+    content:"";
+    position:fixed;inset:0;z-index:0;pointer-events:none;opacity:0.035;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .wrap{position:relative;z-index:1;}
+
+  a{color:inherit;text-decoration:none;}
+  .container{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+
+  /* ---------- NAV ---------- */
+  header{position:sticky;top:0;z-index:50;backdrop-filter:blur(10px);
+    background:rgba(22,17,13,0.72);border-bottom:1px solid var(--line);}
+  nav{display:flex;align-items:center;justify-content:space-between;height:72px;}
+  .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;
+    font-weight:600;font-size:1.18rem;letter-spacing:0.01em;}
+  .mark{width:26px;height:26px;flex:none;object-fit:contain;}
+  .hero-flame{width:96px;height:auto;display:block;margin-bottom:28px;
+    filter:drop-shadow(0 8px 34px rgba(239,123,69,0.45));}
+  @media(max-width:720px){.hero-flame{width:78px;}}
+  .nav-links{display:flex;gap:30px;font-size:0.93rem;color:var(--cream-dim);}
+  .nav-links a{transition:color .2s;}
+  .nav-links a:hover{color:var(--ember-soft);}
+  .nav-cta{border:1px solid var(--line-strong);padding:9px 18px;border-radius:999px;
+    font-size:0.9rem;color:var(--cream);transition:.2s;}
+  .nav-cta:hover{border-color:var(--ember);background:rgba(239,123,69,0.08);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:120px 0 90px;}
+  .eyebrow{display:inline-flex;align-items:center;gap:9px;font-size:0.8rem;
+    letter-spacing:0.16em;text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line);padding:7px 15px;border-radius:999px;margin-bottom:30px;}
+  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--ember);
+    box-shadow:0 0 10px 2px rgba(239,123,69,0.7);}
+  h1{font-family:'Fraunces',serif;font-weight:500;
+    font-size:clamp(2.7rem,6.4vw,4.7rem);line-height:1.04;letter-spacing:-0.015em;
+    max-width:14ch;margin-bottom:26px;}
+  h1 em{font-style:italic;color:var(--ember-soft);}
+  .lede{font-size:clamp(1.05rem,2vw,1.32rem);color:var(--cream-dim);max-width:50ch;margin-bottom:38px;}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
+  .btn{padding:13px 26px;border-radius:999px;font-weight:600;font-size:0.97rem;transition:.22s;}
+  .btn-primary{background:var(--ember);color:#211007;}
+  .btn-primary:hover{background:var(--ember-soft);transform:translateY(-2px);
+    box-shadow:0 12px 30px -10px rgba(239,123,69,0.55);}
+  .btn-ghost{border:1px solid var(--line-strong);color:var(--cream);}
+  .btn-ghost:hover{border-color:var(--ember);}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(22px);animation:rise .9s cubic-bezier(.2,.7,.2,1) forwards;}
+  @keyframes rise{to{opacity:1;transform:none;}}
+  .d1{animation-delay:.05s}.d2{animation-delay:.18s}.d3{animation-delay:.31s}
+  .d4{animation-delay:.44s}.d5{animation-delay:.57s}
+
+  /* ---------- SECTION FRAME ---------- */
+  section{padding:78px 0;}
+  .sec-tag{font-size:0.8rem;letter-spacing:0.16em;text-transform:uppercase;
+    color:var(--gold);margin-bottom:16px;}
+  h2{font-family:'Fraunces',serif;font-weight:500;font-size:clamp(1.9rem,4vw,2.7rem);
+    line-height:1.1;letter-spacing:-0.01em;margin-bottom:18px;max-width:20ch;}
+  .sec-intro{color:var(--cream-dim);max-width:58ch;font-size:1.05rem;}
+
+  .divider{height:1px;background:var(--line);max-width:var(--maxw);margin:0 auto;}
+
+  /* ---------- WHAT WE DO ---------- */
+  .cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:46px;}
+  @media(max-width:720px){.cards{grid-template-columns:1fr;}}
+  .card{background:var(--bg-card);border:1px solid var(--line);border-radius:18px;
+    padding:30px 28px;transition:.25s;}
+  .card:hover{border-color:var(--line-strong);transform:translateY(-3px);
+    background:#271f18;}
+  .card .ico{font-size:1.4rem;margin-bottom:16px;display:block;}
+  .card h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.3rem;margin-bottom:9px;}
+  .card p{color:var(--muted);font-size:0.98rem;}
+
+  /* ---------- WORK / IN DEVELOPMENT ---------- */
+  .work-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:46px;}
+  @media(max-width:720px){.work-grid{grid-template-columns:1fr;}}
+  .work{background:linear-gradient(160deg,#241c15,#1c1610);border:1px solid var(--line);
+    border-radius:18px;padding:30px 28px;position:relative;overflow:hidden;}
+  .work .status{position:absolute;top:22px;right:22px;font-size:0.72rem;
+    letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);
+    border:1px solid var(--line-strong);padding:4px 11px;border-radius:999px;}
+  .work h3{font-family:'Fraunces',serif;font-weight:500;font-size:1.45rem;margin-bottom:10px;}
+  .work p{color:var(--cream-dim);font-size:0.98rem;max-width:42ch;}
+  .work .cat{display:inline-block;margin-top:16px;font-size:0.82rem;color:var(--muted);}
+
+  /* ---------- ABOUT / COMPANY (verification block) ---------- */
+  .about{background:var(--bg-raise);border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:54px;align-items:start;}
+  @media(max-width:820px){.about-grid{grid-template-columns:1fr;gap:34px;}}
+  .facts{background:var(--bg-card);border:1px solid var(--line);border-radius:18px;padding:32px;}
+  .facts dl{display:grid;grid-template-columns:auto 1fr;gap:14px 22px;}
+  .facts dt{color:var(--muted);font-size:0.86rem;letter-spacing:0.04em;text-transform:uppercase;padding-top:2px;}
+  .facts dd{color:var(--cream);font-size:1rem;font-weight:500;}
+  .facts dd a:hover{color:var(--ember-soft);}
+
+  /* ---------- CONTACT ---------- */
+  .contact{text-align:center;}
+  .contact h2{margin:0 auto 18px;}
+  .contact .sec-intro{margin:0 auto 34px;}
+  .mail{font-family:'Fraunces',serif;font-size:clamp(1.4rem,3.5vw,2.1rem);
+    color:var(--ember-soft);border-bottom:1px solid var(--line-strong);padding-bottom:5px;transition:.2s;}
+  .mail:hover{color:var(--ember);border-color:var(--ember);}
+  .loc{margin-top:22px;color:var(--muted);font-size:0.98rem;}
+
+  /* ---------- FOOTER ---------- */
+  footer{border-top:1px solid var(--line);padding:46px 0 60px;}
+  .foot{display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;}
+  .foot .legal{color:var(--muted);font-size:0.86rem;line-height:1.7;}
+  .foot .legal strong{color:var(--cream-dim);font-weight:600;}
+  .foot-links{display:flex;gap:24px;font-size:0.9rem;color:var(--cream-dim);}
+  .foot-links a:hover{color:var(--ember-soft);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#top" aria-label="Sakred Studio home">
+          <img class="mark" src="assets/flame.png" alt="Sakred Studio flame logo" />
+          Sakred&nbsp;Studio
+        </a>
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#about">Company</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <a class="nav-cta" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <img class="hero-flame reveal d1" src="assets/flame.png" alt="Sakred Studio flame logo" />
+        <span class="eyebrow reveal d1"><span class="dot"></span>Independent app studio · Toronto, Canada</span>
+        <h1 class="reveal d2">We build calm, useful <em>mobile software</em> for everyday life.</h1>
+        <p class="lede reveal d3">Sakred Studio is a small, independent software studio. We design and develop thoughtful mobile apps across wellness, productivity, and the moments in between — built carefully, with respect for the people who use them.</p>
+        <div class="hero-actions reveal d4">
+          <a class="btn btn-primary" href="#work">See what we're building</a>
+          <a class="btn btn-ghost" href="#contact">Contact the studio</a>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WHAT WE DO -->
+    <section id="do">
+      <div class="container">
+        <p class="sec-tag">What we do</p>
+        <h2>A studio focused on a few things, done well.</h2>
+        <p class="sec-intro">Rather than chasing scale, we build a small portfolio of native and cross-platform apps we genuinely believe in — each one designed to be clear, trustworthy, and quietly helpful.</p>
+        <div class="cards">
+          <div class="card"><span class="ico">🌿</span><h3>Health &amp; wellness</h3><p>Supportive, privacy-respecting companion apps that help people feel informed and looked after — without diagnosing or replacing professional care.</p></div>
+          <div class="card"><span class="ico">✓</span><h3>Productivity &amp; tools</h3><p>Focused utilities that remove friction from daily routines and help people stay organized with less effort.</p></div>
+          <div class="card"><span class="ico">✦</span><h3>Lifestyle &amp; culture</h3><p>Apps that bring a little meaning, ritual, or delight to ordinary moments — designed with taste and care.</p></div>
+          <div class="card"><span class="ico">◆</span><h3>Thoughtful engineering</h3><p>Modern, secure, well-architected builds with clear data practices, consent-first personalization, and a real human always in control.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="container">
+        <p class="sec-tag">Currently building</p>
+        <h2>Work in development.</h2>
+        <p class="sec-intro">Our apps are in active development and testing. We take our time to get the experience, privacy, and reliability right before release.</p>
+        <div class="work-grid">
+          <div class="work">
+            <span class="status">In development</span>
+            <h3>Wellness companion</h3>
+            <p>A calm, supportive mobile companion designed to help people navigate a meaningful stage of life with clear, considerate guidance — informational and supportive, never a substitute for professional medical advice.</p>
+            <span class="cat">Health &amp; wellness</span>
+          </div>
+          <div class="work">
+            <span class="status">In development</span>
+            <h3>Everyday utilities</h3>
+            <p>A growing set of focused tools and lifestyle apps that make small daily tasks simpler, faster, and more pleasant to use.</p>
+            <span class="cat">Productivity &amp; lifestyle</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <!-- ABOUT / COMPANY -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-grid">
+          <div>
+            <p class="sec-tag">The company</p>
+            <h2>An independent studio, based in Toronto.</h2>
+            <p class="sec-intro">Sakred Studio is the operating brand of <strong>17899181&nbsp;Canada&nbsp;Inc.</strong>, a Canadian software company headquartered in Toronto, Ontario. We are a small, founder-led team that designs, builds, and publishes our own mobile applications. We care about craft, privacy, and building software that earns trust.</p>
+          </div>
+          <div class="facts">
+            <dl>
+              <dt>Studio</dt><dd>Sakred Studio</dd>
+              <dt>Legal entity</dt><dd>17899181 Canada Inc.</dd>
+              <dt>Location</dt><dd>Toronto, Ontario, Canada</dd>
+              <dt>Focus</dt><dd>Mobile app design &amp; development</dd>
+              <dt>Contact</dt><dd><a href="mailto:sakredfamily@gmail.com">sakredfamily@gmail.com</a></dd>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <p class="sec-tag">Get in touch</p>
+        <h2>Let's talk.</h2>
+        <p class="sec-intro">Questions about the studio, our apps, or working together? We'd love to hear from you.</p>
+        <a class="mail" href="mailto:sakredfamily@gmail.com">sakredfamily@gmail.com</a>
+        <p class="loc">Sakred Studio · 17899181 Canada Inc. · Toronto, Ontario, Canada</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="foot">
+        <div class="legal">
+          <strong>Sakred Studio</strong> — operating brand of 17899181 Canada Inc.<br />
+          © <span id="yr">2026</span> 17899181 Canada Inc. All rights reserved. · Toronto, Canada
+        </div>
+        <div class="foot-links">
+          <a href="#about">Company</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="mailto:sakredfamily@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<script>document.getElementById('yr').textContent=new Date().getFullYear();</script>
+</body>
+</html>
