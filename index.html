@@ -13,11 +13,7 @@
 <meta property="og:description" content="An independent app studio in Toronto, Canada, building calm, useful mobile software." />
 <meta property="og:url" content="https://sakredstudio.ca/" />
 <meta property="og:site_name" content="Sakred Studio" />
-<meta property="og:image" content="assets/og-hero.png" />
 
-<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png" />
-<link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -75,9 +71,6 @@
   .brand{display:flex;align-items:center;gap:11px;font-family:'Fraunces',serif;
     font-weight:600;font-size:1.18rem;letter-spacing:0.01em;}
   .mark{width:26px;height:26px;flex:none;object-fit:contain;}
-  .hero-flame{width:96px;height:auto;display:block;margin-bottom:28px;
-    filter:drop-shadow(0 8px 34px rgba(239,123,69,0.45));}
-  @media(max-width:720px){.hero-flame{width:78px;}}
   .nav-links{display:flex;gap:30px;font-size:0.93rem;color:var(--cream-dim);}
   .nav-links a{transition:color .2s;}
   .nav-links a:hover{color:var(--ember-soft);}
@@ -180,7 +173,13 @@
     <div class="container">
       <nav>
         <a class="brand" href="#top" aria-label="Sakred Studio home">
-          <img class="mark" src="assets/flame.png" alt="Sakred Studio flame logo" />
+          <svg class="mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M16 2c2.2 5 7 6.8 7 12.4 0 4-3.1 7.2-7 7.2s-7-3.2-7-7.2C9 8.8 13.8 7 16 2Z" fill="url(#g)"/>
+            <path d="M16 12c1 2 3 2.8 3 5.2 0 1.9-1.4 3.4-3 3.4s-3-1.5-3-3.4c0-2.4 2-3.2 3-5.2Z" fill="#211007"/>
+            <circle cx="16" cy="27" r="2.4" fill="url(#g)"/>
+            <defs><linearGradient id="g" x1="9" y1="2" x2="23" y2="30" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#f29a6a"/><stop offset="1" stop-color="#ef7b45"/></linearGradient></defs>
+          </svg>
           Sakred&nbsp;Studio
         </a>
         <div class="nav-links">
@@ -198,7 +197,6 @@
     <!-- HERO -->
     <section class="hero">
       <div class="container">
-        <img class="hero-flame reveal d1" src="assets/flame.png" alt="Sakred Studio flame logo" />
         <span class="eyebrow reveal d1"><span class="dot"></span>Independent app studio · Toronto, Canada</span>
         <h1 class="reveal d2">We build calm, useful <em>mobile software</em> for everyday life.</h1>
         <p class="lede reveal d3">Sakred Studio is a small, independent software studio. We design and develop thoughtful mobile apps across wellness, productivity, and the moments in between — built carefully, with respect for the people who use them.</p>
